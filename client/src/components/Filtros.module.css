@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    align-items: center;
+    background-color: rgb(75, 73, 73);
+    width: 90%;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    height: 20px;
+  }
+.label{
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    
+    
+}

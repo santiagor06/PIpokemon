@@ -1,0 +1,25 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    min-height: 800px;
+}
+
+
+
+.cards {
+    background: linear-gradient(90deg,#999293,#fcf9f2);
+    color: rgb(255, 255, 255);
+    transition: all 2s;
+    width: 100%;
+    min-height: 630px;
+    flex-direction: column;
+    border: none!important;
+    padding: 15px 5%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.link{
+    text-decoration: none;
+}

@@ -1,0 +1,17 @@
+.main{
+    background: linear-gradient(90deg,#999293,#fcf9f2);
+}
+.title{
+    font-size: 45px;
+    display: block;
+
+    margin-block-start: 0.67em;
+    
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.head{
+    display: flex;
+    flex-direction: column;
+}

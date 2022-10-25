@@ -1,0 +1,45 @@
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.cardInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card{
+    position: relative;
+    width: 250px;
+    height: 160px;
+    margin: 15px;
+    padding: 1rem;
+    transition: all 1s;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 0 6.7px 5.3px rgb(0 0 0 / 5%), 0 12.5px 10px rgb(0 0 0 / 6%);
+    z-index: 5;
+    cursor: pointer;
+}
+
+
+.card:hover{
+    background-color:rgb(75, 73, 73);
+}
+
+.pokemonImg{
+    position: absolute;
+    width: 150px;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 100;
+    transition: none!important;
+}
+
+.link{
+    text-decoration: none;
+}

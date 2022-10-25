@@ -1,0 +1,57 @@
+import React from "react";
+import { useState,useEffect } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { getDetail,clean } from "../redux/actions";
+import Navbar from "./Navbar"
+import s from "./Detalle.module.css"
+import cargando from "../imagenes/Loading2.gif";
+
+
+
+ const Detalle=(props)=>{
+
+const id=props.match.params.id;
+const dispatch=useDispatch();
+let pokemon=useSelector((state)=>state.pokemon);
+
+useEffect(()=>{
+    dispatch(getDetail(id))
+    return dispatch(clean())
+},[dispatch,id])
+
+return(
+    
+    <div className={s.main}>
+        <Navbar/>
+        {pokemon.length?
+        <div>
+        <div className={s.head}>
+        <h1 className={s.title}>{pokemon&&pokemon[0].name.charAt(0).toUpperCase()+pokemon[0].name.slice(1)}</h1>
+        <p>(#{id})</p>
+        </div>
+        <div>
+        <div>
+        <h2>Estadisticas:</h2>
+        <p>Hp: {pokemon&&pokemon[0].hp}  </p>
+        <p>Ataque: {pokemon&&pokemon[0].attack}  </p>
+        <p>Defensa: {pokemon&&pokemon[0].hp}  </p>
+        <p>Peso: {pokemon&&pokemon[0].weight} Kg  </p>
+        <p>Altura: {pokemon&&pokemon[0].height} M  </p>
+        </div>
+
+        <div>
+            <h2>Tipo:</h2>
+        <ol>
+            {pokemon&&pokemon[0].types.map((t)=>{
+                return <li>{t.name}</li>
+            })}
+        </ol>
+        </div>
+        <img alt="img" src={pokemon&&pokemon[0].image}  width="200px" height="250px"/>
+        </div>
+
+        </div>:<img src={cargando} alt="cargando"/>}
+    </div>
+)
+ }
+export default Detalle;
