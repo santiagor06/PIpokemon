@@ -48,12 +48,12 @@ const handleAttack=(e)=>{
         <Filtros types={types} handleType={handleType} handleCreated={handleCreated} handleAlpha={handleAlpha} handleAttack={handleAttack}/>
         
             <div className={s.cards}>
-        {currentPokemons?currentPokemons.map(p=>{
+        {currentPokemons.length?currentPokemons.map(p=>{
           return (
             <Link className={s.link} to={`/pokemon/${p.id}`}>
                 <Pokemon  name={p.name} image={p.image} types={p.types} key={p.id}/>
             </Link>)
-        }):<img src={cargando} alt="cargando"/>}
+        }):<div className={s.main2}><img src={cargando} alt="cargando"/></div>}
         </div>
         
        

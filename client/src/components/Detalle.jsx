@@ -50,7 +50,7 @@ return(
         <img alt="img" src={pokemon&&pokemon[0].image}  width="200px" height="250px"/>
         </div>
 
-        </div>:<img src={cargando} alt="cargando"/>}
+        </div>:<div className={s.main2}><img src={cargando} alt="cargando"/></div>}
     </div>
 )
  }
