@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { getTypes,postPokemon } from "../redux/actions";
 import Navbar from "./Navbar";
 import s from "./Form.module.css"
+import entrenador from "../imagenes/entrenador.png"
 
 
 
@@ -72,41 +73,52 @@ const Form=(props)=>{
     return(
         <div className={s.main}>
             <Navbar/>
+            <div className={s.all}>
+            <div className={s.form}>
             <h1>CREA TU POKEMON!!!</h1>
+            
             <form onSubmit={(e)=>{handleSubmit(e)}}>
-            <div>
+            <div className={s.inp}>
                 <label for="name">Nombre: </label>
-                <input onChange={(e)=>{handleChange(e)}} placeholder="Ingrese un nombre" type="text" name="name"></input>
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} placeholder="Ingrese un nombre" type="text" name="name"></input>
                 {errors.name&&(<p className={s.error}>{errors.name}</p>)}
             </div>
-            <div>
+            <div className={s.stats}>
+                <div className={s.uni}>
                 <label for="hp">Hp: </label>
-                <input onChange={(e)=>{handleChange(e)}} type="number" id="hp" placeholder="1-1000" name="hp" min="1" max="1000"></input>
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} type="number" id="hp" placeholder="1-1000" name="hp" min="1" max="1000"></input>
+                </div>
+                <div className={s.uni}>
                 <label for="attack">Att: </label>
-                <input onChange={(e)=>{handleChange(e)}} type="number" placeholder="1-1000" id="attack" name="attack" min="1" max="1000"></input>
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} type="number" placeholder="1-1000" id="attack" name="attack" min="1" max="1000"></input>
+                </div>
+                <div className={s.uni}>
                 <label for="defense">Def: </label>
-                <input onChange={(e)=>{handleChange(e)}} type="number" placeholder="1-1000" id="defense" name="defense" min="1" max="1000"></input>
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} type="number" placeholder="1-1000" id="defense" name="defense" min="1" max="1000"></input>
+                </div>
+                <div className={s.uni}>
                 <label for="velocity">Vel: </label>
-                <input onChange={(e)=>{handleChange(e)}} type="number" placeholder="1-1000" id="velocity" name="velocity" min="1" max="1000"></input>
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} type="number" placeholder="1-1000" id="velocity" name="velocity" min="1" max="1000"></input>
                 </div>
-                <div>
+                </div>
+                <div className={s.inp}>
                 <label for="height">Altura: </label>
-                <input onChange={(e)=>{handleChange(e)}} type="number" placeholder="Metros" id="height" name="height" min="1" ></input>
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} type="number" placeholder="Metros" id="height" name="height" min="1" ></input>
                 </div>
-                <div>
+                <div className={s.inp}>
                 <label for="weight">Peso: </label>
-                <input onChange={(e)=>{handleChange(e)}} placeholder="kilos" type="number" id="weight" name="weight" min="1" ></input>
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} placeholder="kilos" type="number" id="weight" name="weight" min="1" ></input>
                 </div>
                 
                 
-                <div>
+                <div className={s.inp}>
                 <label for="image">Imagen: </label>
-                <input onChange={(e)=>{handleChange(e)}} type="text" name="image" placeholder="Ingrese un URL"></input> 
+                <input className={s.bor} onChange={(e)=>{handleChange(e)}} type="text" name="image" placeholder="Ingrese un URL"></input> 
                 {errors.image&&(<p className={s.error}>{errors.image}</p>)}
                 </div>
-                <div>
+                <div className={s.inp}>
                 <label for="type">Tipo: </label>
-                <select onChange={(e)=>{handleChangeSelect(e)}} name="type" id="type" >
+                <select className={s.bor} onChange={(e)=>{handleChangeSelect(e)}} name="type" id="type" >
                 {types&&types.map((t)=>{
                     return(<option value={t.name}>{t.name}</option>)
                 })}
@@ -123,7 +135,9 @@ const Form=(props)=>{
             {errors.stats&&(<p className={s.error}>{errors.stats}</p>)}
          
             </form>
-
+            </div>  
+            <div className={s.entre}><img className={s.entre} src={entrenador} alt="icon"/></div>
+            </div>                  
         </div>
     )
 }

@@ -24,13 +24,13 @@ return(
     <div className={s.main}>
         <Navbar/>
         {pokemon.length?
-        <div>
+        <div className={s.cont}>
         <div className={s.head}>
         <h1 className={s.title}>{pokemon&&pokemon[0].name.charAt(0).toUpperCase()+pokemon[0].name.slice(1)}</h1>
-        <p>(#{id})</p>
-        </div>
-        <div>
-        <div>
+      
+        
+        <div className={s.info}>
+        <div className={s.stats}>
         <h2>Estadisticas:</h2>
         <p>Hp: {pokemon&&pokemon[0].hp}  </p>
         <p>Ataque: {pokemon&&pokemon[0].attack}  </p>
@@ -39,16 +39,19 @@ return(
         <p>Altura: {pokemon&&pokemon[0].height} M  </p>
         </div>
 
-        <div>
+        <div className={s.type}>
             <h2>Tipo:</h2>
-        <ol>
+        
             {pokemon&&pokemon[0].types.map((t)=>{
-                return <li>{t.name}</li>
+                return <p>- {t.name}</p>
             })}
-        </ol>
+        
         </div>
-        <img alt="img" src={pokemon&&pokemon[0].image}  width="200px" height="250px"/>
         </div>
+        </div>
+        <div >
+        <img alt="img" className={s.poke} src={pokemon&&pokemon[0].image}  width="200px" height="250px"/>
+       </div>
 
         </div>:<div className={s.main2}><img src={cargando} alt="cargando"/></div>}
     </div>

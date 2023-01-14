@@ -1,5 +1,7 @@
 .main{
     background: linear-gradient(90deg,#999293,#fcf9f2);
+    height: 100vh;
+    
 }
 .title{
     font-size: 45px;
@@ -14,6 +16,11 @@
 .head{
     display: flex;
     flex-direction: column;
+    border-radius: 15px;
+    background-color:rgb(161, 154, 154);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 25vw;
 }
 .main2{
     background: linear-gradient(90deg,#999293,#fcf9f2);
@@ -22,4 +29,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.cont{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.poke{
+margin-left: 35%;
+margin-top: 10%;
+height: 650px;
+width: 600px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+
+}
+.stats{
+    margin-right: 20%;
 }

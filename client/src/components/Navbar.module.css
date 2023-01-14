@@ -1,7 +1,7 @@
 .container{
   display: flex;
   align-items: center;
-  background-color: rgb(244, 72, 72);
+  background-color: rgb(245, 74, 74);
   width: 90%;
   justify-content: space-between;
   padding: 1rem 5%;
