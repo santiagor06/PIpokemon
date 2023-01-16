@@ -1,7 +1,7 @@
 import React from "react";
 import { useState,useEffect} from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { getTypes,postPokemon } from "../redux/actions";
 import Navbar from "./Navbar";
 import s from "./Form.module.css"
@@ -10,7 +10,7 @@ import entrenador from "../imagenes/entrenador.png"
 
 
 const Form=(props)=>{
-    const history=useHistory();
+    const history=useNavigate();
     const [errors,setErrors]=useState({});
     const[input,setInput]=useState({name:"",
                                     hp:"",
