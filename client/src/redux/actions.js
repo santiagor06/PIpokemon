@@ -13,14 +13,14 @@ export const CLEAN = "CLEAN";
 
 export const getPokemons = () => {
   return function (dispatch) {
-    fetch("http://localhost:3001/pokemons/")
+    fetch("https://pokemon-app-api.onrender.com/pokemons/")
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_POKEMONS, payload: data }));
   };
 };
 export const getTypes = () => {
   return function (dispatch) {
-    fetch("http://localhost:3001/types/")
+    fetch("https://pokemon-app-api.onrender.com/types/")
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_TYPES, payload: data }));
   };
@@ -28,7 +28,7 @@ export const getTypes = () => {
 
 export const getPokemon = (payload) => {
   return function (dispatch) {
-    fetch(`http://localhost:3001/pokemons?name=${payload}`)
+    fetch(`https://pokemon-app-api.onrender.com/pokemons?name=${payload}`)
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_POKEMON, payload: data }))
       .catch((err) => {
@@ -39,7 +39,7 @@ export const getPokemon = (payload) => {
 
 export const getDetail = (payload) => {
   return function (dispatch) {
-    fetch(`http://localhost:3001/pokemons/${payload}`)
+    fetch(`https://pokemon-app-api.onrender.com/pokemons/${payload}`)
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_DETAIL, payload: data }))
       .catch((err) => {
@@ -50,7 +50,10 @@ export const getDetail = (payload) => {
 export const postPokemon = (payload) => {
   try {
     return async function (dispatch) {
-      await axios.post("http://localhost:3001/pokemons", payload);
+      await axios.post(
+        "https://pokemon-app-api.onrender.com/pokemons",
+        payload
+      );
       dispatch({ type: POST_POKEMON });
     };
   } catch (error) {
