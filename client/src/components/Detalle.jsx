@@ -5,18 +5,19 @@ import { getDetail,clean } from "../redux/actions";
 import Navbar from "./Navbar"
 import s from "./Detalle.module.css"
 import cargando from "../imagenes/Loading2.gif";
+import { useParams } from 'react-router-dom';
 
 
 
  const Detalle=(props)=>{
 
-const id=props.match.params.id;
+const {id}=useParams();
 const dispatch=useDispatch();
 let pokemon=useSelector((state)=>state.pokemon);
 
 useEffect(()=>{
     dispatch(getDetail(id))
-    return dispatch(clean())
+    return ()=>dispatch(clean())
 },[dispatch,id])
 
 return(

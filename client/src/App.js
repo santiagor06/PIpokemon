@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Inicio from "./components/Inicio";
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
@@ -10,11 +10,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Route exact path="/" component={Inicio} />
-
-        <Route path="/form" component={Form} />
-        <Route path="/home" component={Home} />
-        <Route path="/pokemon/:id" component={Detalle} />
+        <Routes>
+          <Route exact path="/" element={<Inicio />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/pokemon/:id" element={<Detalle />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
