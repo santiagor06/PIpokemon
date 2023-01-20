@@ -55,7 +55,7 @@ const Form=(props)=>{
         ,type:[],
         image:""});
         }
-        else{alert("Faltan campos")}
+        else{alert(" campos")}
         
 
     }
@@ -72,7 +72,7 @@ const Form=(props)=>{
     
     return(
         <div className={s.main}>
-            <Navbar/>
+           <Navbar/>
             <div className={s.all}>
             <div className={s.form}>
             <h1>CREA TU POKEMON!!!</h1>
