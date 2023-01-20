@@ -55,7 +55,7 @@ const Form=(props)=>{
         ,type:[],
         image:""});
         }
-        else{alert("Faltan campos")}
+        else{alert("Falta campos")}
         
 
     }
