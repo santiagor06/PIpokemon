@@ -7,7 +7,7 @@ const Navbar=(props)=>{
         
           <div className={s.container}>
             <Link to='/home'> <img className={s.landing} src={logo} alt='Pokemon'/> </Link>     
-              
+            
           
            </div>
             
